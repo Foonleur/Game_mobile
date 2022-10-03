@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/sfx_twoTone.ogg-d3aecf63988a492071ab6bed62b8debb.oggstr"
+
+[deps]
+
+source_file="res://Asend/space/Bonus/sfx_twoTone.ogg"
+dest_files=[ "res://.import/sfx_twoTone.ogg-d3aecf63988a492071ab6bed62b8debb.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/sound.mp3-d09a3b03c9529c3b09db87527136ad65.mp3str"
+
+[deps]
+
+source_file="res://Asend/Sound_EF/sound.mp3"
+dest_files=[ "res://.import/sound.mp3-d09a3b03c9529c3b09db87527136ad65.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

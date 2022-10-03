@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/alexander-nakarada-space-ambience.mp3-a20b382017fbc7cac9742488e1e04cb5.mp3str"
+
+[deps]
+
+source_file="res://Asend/Music/alexander-nakarada-space-ambience.mp3"
+dest_files=[ "res://.import/alexander-nakarada-space-ambience.mp3-a20b382017fbc7cac9742488e1e04cb5.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Back_sound.mp3-e75d55eb38ae953f10749f8b5fde6612.mp3str"
+
+[deps]
+
+source_file="res://Asend/Sound_EF/Back_sound.mp3"
+dest_files=[ "res://.import/Back_sound.mp3-e75d55eb38ae953f10749f8b5fde6612.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Asend/Sound_EF/Back_sound.mp3" type="AudioStream" id=1]
+[ext_resource path="res://Asend/Sound_EF/select_sond.mp3" type="AudioStream" id=2]
+
+[node name="Game_audio" type="Node"]
+
+[node name="Efftect" type="Node" parent="."]
+
+[node name="Select" type="AudioStreamPlayer" parent="Efftect"]
+stream = ExtResource( 2 )
+volume_db = -5.0
+
+[node name="Back" type="AudioStreamPlayer" parent="Efftect"]
+stream = ExtResource( 1 )
+
+[node name="Music" type="Node" parent="."]

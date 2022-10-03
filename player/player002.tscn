@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://player/player002.gd" type="Script" id=1]
+[ext_resource path="res://Asend/boat/PNG/Default size/Ships/ship (1).png" type="Texture" id=2]
+[ext_resource path="res://control/joystick_002.tscn" type="PackedScene" id=3]
+[ext_resource path="res://object/bullet.tscn" type="PackedScene" id=4]
+
+[node name="control" type="Node"]
+
+[node name="player002" type="KinematicBody2D" parent="."]
+position = Vector2( 473, 295 )
+rotation = -1.5708
+script = ExtResource( 1 )
+Bullet = ExtResource( 4 )
+gun_cooldown = 0.4
+health = 100
+
+[node name="Sprite" type="Sprite" parent="player002"]
+position = Vector2( 0, -1 )
+rotation = -1.5708
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="player002"]
+rotation = -1.5708
+polygon = PoolVector2Array( -1, -58, -28, -33, -32, 1, 0, 54, 34, 2, 28, -33 )
+
+[node name="Camera2D" type="Camera2D" parent="player002"]
+current = true
+limit_left = 0
+limit_top = 0
+limit_right = 3000
+limit_bottom = 3000
+
+[node name="gun_time" type="Timer" parent="player002"]
+
+[node name="joystick_002" parent="." instance=ExtResource( 3 )]
+
+[node name="gun_time" type="Timer" parent="joystick_002"]
+
+[connection signal="shoot" from="joystick_002" to="player002" method="_on_ship_shoot"]
+[connection signal="swipe_detect" from="joystick_002" to="player002" method="_on_joystick_002_swipe_detect"]
+[connection signal="swipe_end" from="joystick_002" to="player002" method="_on_joystick_002_swipe_end"]

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/select_sond.mp3-e51eb8d0777c4c5779741a4a284a1eaa.mp3str"
+
+[deps]
+
+source_file="res://Asend/Sound_EF/select_sond.mp3"
+dest_files=[ "res://.import/select_sond.mp3-e51eb8d0777c4c5779741a4a284a1eaa.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

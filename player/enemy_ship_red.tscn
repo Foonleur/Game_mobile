@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://player/enemy_red.gd" type="Script" id=1]
+[ext_resource path="res://Asend/boat/PNG/Default size/Ships/ship (3).png" type="Texture" id=2]
+
+[node name="enemy_ship" type="Node"]
+
+[node name="enemy_red" type="KinematicBody2D" parent="."]
+script = ExtResource( 1 )
+speed = 150
+
+[node name="Sprite" type="Sprite" parent="enemy_red"]
+position = Vector2( 178, 123 )
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="enemy_red"]
+polygon = PoolVector2Array( 178, 69, 151, 92, 146, 125, 177, 178, 211, 125, 205, 91 )
+
+[node name="gun_time" type="Timer" parent="enemy_red"]

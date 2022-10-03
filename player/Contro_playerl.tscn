@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://player/joystick_button.gd" type="Script" id=1]
+[ext_resource path="res://Asend/button/pngegg (2).png" type="Texture" id=2]
+[ext_resource path="res://Asend/button/Circle_-_black_simple.svg.png" type="Texture" id=3]
+[ext_resource path="res://player/boat.gd" type="Script" id=4]
+[ext_resource path="res://Asend/boat/PNG/Default size/Ships/ship (1).png" type="Texture" id=5]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 260.0
+
+[node name="joystick 01" type="Sprite"]
+position = Vector2( 108, 497 )
+texture = ExtResource( 3 )
+
+[node name="boat" type="KinematicBody2D" parent="."]
+position = Vector2( 366, -240 )
+rotation = -1.5708
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="boat"]
+position = Vector2( 1.99997, 1 )
+texture = ExtResource( 5 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="boat"]
+position = Vector2( -358, 279 )
+polygon = PoolVector2Array( 357, -331, 331, -306, 326, -272, 359, -220, 392, -273, 387, -308, 361, -332 )
+
+[node name="joystick_button" type="TouchScreenButton" parent="."]
+position = Vector2( 3, 10 )
+scale = Vector2( 0.12, 0.12 )
+normal = ExtResource( 2 )
+pressed = ExtResource( 2 )
+shape = SubResource( 1 )
+script = ExtResource( 1 )

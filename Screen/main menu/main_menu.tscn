@@ -1,0 +1,219 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://Asend/space/BG_space.png" type="Texture" id=1]
+[ext_resource path="res://Screen/main menu/game_title.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Screen/main menu/main_menu.gd" type="Script" id=3]
+[ext_resource path="res://Asend/button/Green Button.png" type="Texture" id=4]
+[ext_resource path="res://Screen/main menu/Game_audio.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Asend/Icon/icon_settings.png" type="Texture" id=6]
+[ext_resource path="res://Asend/Icon/icon_info.png" type="Texture" id=7]
+[ext_resource path="res://Font/main_menu.tres" type="Theme" id=8]
+[ext_resource path="res://Asend/button/pupolr Button.png" type="Texture" id=9]
+[ext_resource path="res://Font/Pirate Ship.ttf" type="DynamicFontData" id=10]
+[ext_resource path="res://Asend/Icon/icon_music_note.png" type="Texture" id=11]
+[ext_resource path="res://Asend/Icon/icon_music_off.png" type="Texture" id=12]
+[ext_resource path="res://Screen/main menu/Setting.gd" type="Script" id=13]
+[ext_resource path="res://Asend/Icon/icon_volume_on.png" type="Texture" id=14]
+[ext_resource path="res://Asend/Icon/icon_volume_off.png" type="Texture" id=15]
+[ext_resource path="res://Screen/main menu/Button_back.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Asend/Music/alexander-nakarada-space-ambience.mp3" type="AudioStream" id=17]
+
+[sub_resource type="DynamicFont" id=1]
+size = 60
+font_data = ExtResource( 10 )
+
+[sub_resource type="Theme" id=2]
+default_font = SubResource( 1 )
+
+[node name="main_menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="Main_BG" type="TextureRect" parent="."]
+anchor_right = 1.00195
+anchor_bottom = 0.996667
+margin_right = -2.0
+margin_bottom = 2.0
+texture = ExtResource( 1 )
+expand = true
+
+[node name="Button" type="Control" parent="."]
+anchor_left = 0.000976563
+anchor_top = 0.00166667
+anchor_right = 1.00195
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Play_button" type="Control" parent="Button"]
+anchor_right = 1.00195
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Button/Play_button"]
+position = Vector2( 394, 319 )
+scale = Vector2( 0.379735, 0.375 )
+normal = ExtResource( 9 )
+
+[node name="Label" type="Label" parent="Button/Play_button"]
+margin_left = 458.0
+margin_top = 336.0
+margin_right = 547.062
+margin_bottom = 401.0
+theme = ExtResource( 8 )
+text = "play"
+align = 1
+valign = 1
+
+[node name="sond_change_screen" type="Timer" parent="Button/Play_button"]
+one_shot = true
+autostart = true
+
+[node name="Exit_button" type="Control" parent="Button"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Button/Exit_button"]
+position = Vector2( 417, 434 )
+scale = Vector2( 0.297794, 0.297794 )
+normal = ExtResource( 9 )
+
+[node name="Label" type="Label" parent="Button/Exit_button"]
+anchor_left = 0.416585
+anchor_top = 0.701169
+anchor_right = 0.567805
+anchor_bottom = 0.893155
+theme = ExtResource( 8 )
+text = "Exit"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="INFOR" type="Control" parent="Button"]
+anchor_top = 0.8798
+anchor_right = 0.0946344
+anchor_bottom = 1.00167
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Button/INFOR"]
+position = Vector2( 11, 6 )
+scale = Vector2( 0.105169, 0.202335 )
+normal = ExtResource( 4 )
+
+[node name="TextureRect" type="TextureRect" parent="Button/INFOR"]
+margin_left = 20.0
+margin_top = 10.0
+margin_right = 61.0
+margin_bottom = 47.0
+texture = ExtResource( 7 )
+expand = true
+
+[node name="Setting" type="Control" parent="Button"]
+anchor_left = 0.903417
+anchor_top = 0.914858
+anchor_right = 0.997076
+anchor_bottom = 1.00167
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="TextureRect" type="TextureRect" parent="Button/Setting"]
+margin_left = 28.0
+margin_top = -16.0
+margin_right = 86.0
+margin_bottom = 38.0
+texture = ExtResource( 4 )
+expand = true
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Button/Setting"]
+position = Vector2( 35, -11 )
+scale = Vector2( 0.239583, 0.202335 )
+normal = ExtResource( 6 )
+
+[node name="Game_audio" parent="." instance=ExtResource( 5 )]
+
+[node name="game_title" parent="." instance=ExtResource( 2 )]
+position = Vector2( 530, 88 )
+
+[node name="Setting" type="Node2D" parent="."]
+position = Vector2( -1893, -35 )
+script = ExtResource( 13 )
+
+[node name="Settingpanel" type="Panel" parent="Setting"]
+margin_left = 1059.0
+margin_top = 86.0
+margin_right = 1826.0
+margin_bottom = 515.0
+
+[node name="Settings" type="Label" parent="Setting/Settingpanel"]
+anchor_left = 0.325945
+anchor_top = 0.132867
+anchor_right = 0.676662
+anchor_bottom = 0.37296
+margin_left = 1.52588e-05
+theme = SubResource( 2 )
+text = "SETTINGS"
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Texture1" type="TextureRect" parent="Setting/Settingpanel"]
+anchor_left = 0.29987
+anchor_top = 0.522144
+anchor_right = 0.423729
+anchor_bottom = 0.727273
+texture = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Setting/Settingpanel/Texture1"]
+position = Vector2( 18, 12 )
+scale = Vector2( 0.328125, 0.289522 )
+normal = ExtResource( 11 )
+pressed = ExtResource( 12 )
+
+[node name="Texture2" type="TextureRect" parent="Setting/Settingpanel"]
+margin_left = 433.0
+margin_top = 223.0
+margin_right = 528.0
+margin_bottom = 311.0
+texture = ExtResource( 4 )
+expand = true
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="Setting/Settingpanel/Texture2"]
+position = Vector2( 23, 13 )
+scale = Vector2( 0.276041, 0.288889 )
+normal = ExtResource( 14 )
+pressed = ExtResource( 15 )
+
+[node name="move_tween" type="Tween" parent="Setting"]
+
+[node name="Button_back" parent="." instance=ExtResource( 16 )]
+margin_left = -837.0
+margin_top = 50.0
+margin_right = -1628.0
+margin_bottom = -428.0
+
+[node name="BG_music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 17 )
+volume_db = -15.0
+autoplay = true
+
+[connection signal="pressed" from="Button/Play_button/TouchScreenButton" to="." method="_on_play_pressed"]
+[connection signal="timeout" from="Button/Play_button/sond_change_screen" to="." method="_on_sond_change_screen_timeout"]
+[connection signal="pressed" from="Button/Exit_button/TouchScreenButton" to="." method="_on_exit_TouchScreenButton_pressed"]
+[connection signal="pressed" from="Button/INFOR/TouchScreenButton" to="." method="_on_infor_TouchScreenButton_pressed"]
+[connection signal="pressed" from="Button/Setting/TouchScreenButton" to="." method="_on_TouchScreenButton_pressed"]

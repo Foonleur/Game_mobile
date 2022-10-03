@@ -1,0 +1,71 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Asend/Icon/icon_right.png" type="Texture" id=1]
+[ext_resource path="res://Asend/Icon/icon_left.png" type="Texture" id=2]
+[ext_resource path="res://player_list.gd" type="Script" id=3]
+[ext_resource path="res://CharacterSelectionSystem.gd" type="Script" id=4]
+[ext_resource path="res://Asend/boat/PNG/Default size/Ships/ship (3).png" type="Texture" id=5]
+[ext_resource path="res://Asend/boat/PNG/Default size/Ships/ship (6).png" type="Texture" id=6]
+[ext_resource path="res://Asend/boat/PNG/Default size/Ships/ship (2).png" type="Texture" id=7]
+[ext_resource path="res://Asend/boat/PNG/Default size/Ships/ship (5).png" type="Texture" id=8]
+[ext_resource path="res://Asend/boat/PNG/Default size/Ships/ship (4).png" type="Texture" id=9]
+
+[node name="CharacterSelectionSystem" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 4 )
+
+[node name="player_list" type="Node2D" parent="."]
+script = ExtResource( 3 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="player_list"]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="player" type="Sprite" parent="player_list/HBoxContainer"]
+position = Vector2( 494, 387 )
+scale = Vector2( 1.77273, 1.77273 )
+texture = ExtResource( 7 )
+
+[node name="player2" type="Sprite" parent="player_list/HBoxContainer"]
+position = Vector2( 1546, 381 )
+scale = Vector2( 1.773, 1.773 )
+texture = ExtResource( 5 )
+
+[node name="player3" type="Sprite" parent="player_list/HBoxContainer"]
+position = Vector2( 2643, 387 )
+scale = Vector2( 1.773, 1.773 )
+texture = ExtResource( 9 )
+
+[node name="player4" type="Sprite" parent="player_list/HBoxContainer"]
+position = Vector2( 3649, 384 )
+scale = Vector2( 1.733, 1.773 )
+texture = ExtResource( 8 )
+
+[node name="player5" type="Sprite" parent="player_list/HBoxContainer"]
+position = Vector2( 4602, 385 )
+scale = Vector2( 1.773, 1.773 )
+texture = ExtResource( 6 )
+
+[node name="Move_Tween" type="Tween" parent="player_list/HBoxContainer"]
+playback_speed = 3.0
+playback/speed = 3.0
+
+[node name="Right_button" type="TextureButton" parent="."]
+margin_left = 748.0
+margin_top = 307.0
+margin_right = 860.0
+margin_bottom = 486.0
+texture_normal = ExtResource( 1 )
+expand = true
+
+[node name="left_button" type="TextureButton" parent="."]
+margin_left = 159.0
+margin_top = 300.0
+margin_right = 271.0
+margin_bottom = 479.0
+texture_normal = ExtResource( 2 )
+expand = true
+
+[connection signal="pressed" from="Right_button" to="." method="_on_Right_button_pressed"]
+[connection signal="pressed" from="left_button" to="." method="_on_left_button_pressed"]
