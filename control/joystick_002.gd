@@ -1,7 +1,6 @@
 extends CanvasLayer
 
 var direction = Vector2.ZERO
-var Bullet
 var can_shoot = true
 var start_pos: Vector2 = Vector2.ZERO
 var end_pos: Vector2 = Vector2.ZERO
@@ -9,7 +8,8 @@ var valid_pos = false
 
 signal swipe_detect(swipe_direction)
 signal swipe_end
-signal shoot
+signal Bullet
+
 
 onready var js_pos = get_node("background").rect_position
 onready var js_bg = get_node("background")
@@ -43,12 +43,7 @@ func _on_TextureButton_button_up():
 	js_handle.rect_position.x = 65
 	js_handle.rect_pivot_offset.x = 25
 
-func shoot():
-	if can_shoot:
-		can_shoot = false
-		$gun_time.start()
-		emit_signal('shoot', Bullet, direction)
 
-	
+
 func _on_shoot_pressed():
-	shoot()
+	emit_signal("Bullet")

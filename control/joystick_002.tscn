@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://control/joystick_002.gd" type="Script" id=1]
 [ext_resource path="res://Asend/button/pngegg (2).png" type="Texture" id=2]
 [ext_resource path="res://Asend/button/Circle_-_black_simple.svg.png" type="Texture" id=3]
 [ext_resource path="res://Asend/button/button1.png" type="Texture" id=4]
+[ext_resource path="res://Asend/plan/Tiles/tile_0012.png" type="Texture" id=5]
 
 [node name="joystick_002" type="CanvasLayer"]
 script = ExtResource( 1 )
@@ -42,6 +43,17 @@ anchor_top = 0.696667
 anchor_right = 0.99707
 anchor_bottom = 0.996667
 texture_normal = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="TextureRect" type="TextureRect" parent="shoot"]
+anchor_left = 0.250001
+anchor_top = 0.183332
+anchor_right = 0.800001
+anchor_bottom = 0.777776
+texture = ExtResource( 5 )
 expand = true
 __meta__ = {
 "_edit_use_anchors_": true

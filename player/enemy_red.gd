@@ -4,6 +4,7 @@ signal health_changed
 signal dead
 
 var direction = Vector2.ZERO
+var health: int = 100
 
 onready var parent = get_parent()
 
@@ -11,7 +12,6 @@ export (PackedScene) var Bullet
 export (int) var speed
 export (float) var rotation_speed
 export (float) var gun_cooldown
-export (int) var health
 export (int) var detect_radius
 
 
@@ -23,6 +23,11 @@ var target = null
 func _ready():
 	$gun_time.wait_time = gun_cooldown
 	$detect_Radius/CollisionShape2D.shape.radius = detect_radius
+
+func handle_hit():
+	health -= 20
+	print("enemy hit!", health)
+
 
 
 func control(detal):
@@ -45,8 +50,9 @@ func _physics_process(delta):
 
 
 func _on_detect_Radius_body_entered(body):
-	target = body
-
+	if body.name == "player002":
+		target = body
+	
 
 func _on_detect_Radius_body_exited(body):
 	if body == target:

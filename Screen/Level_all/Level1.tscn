@@ -100,3 +100,10 @@ rotation = -2.72143
 position = Vector2( 3143, 1576 )
 
 [node name="Button_back" parent="." instance=ExtResource( 5 )]
+anchor_right = 0.227539
+anchor_bottom = 0.203333
+margin_right = 0.0
+margin_bottom = 0.0
+__meta__ = {
+"_edit_use_anchors_": true
+}

@@ -19,8 +19,7 @@ func _on_infor_TouchScreenButton_pressed():
 	get_tree().change_scene("res://Screen/main menu/infor.tscn")
 
 
-func _on_TouchScreenButton_pressed():
-	pass
+
 
 
 func _on_play_pressed():
@@ -32,3 +31,9 @@ func _on_play_pressed():
 func _on_sond_change_screen_timeout():
 	pass
 
+
+
+
+
+func _on_setting_Button_released():
+	get_tree().change_scene("res://Screen/setting/setting.tscn")
